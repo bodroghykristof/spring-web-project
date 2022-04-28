@@ -1,0 +1,10 @@
+If no circular dependencies exist, when one or more collaborating beans are being
+injected into a dependent bean, each collaborating bean is totally configured prior
+to being injected into the dependent bean.
+
+The depends-on attribute can specify both an initialization-time dependency and,
+in the case of singleton beans only, a corresponding destruction-time dependency.
+Dependent beans that define a depends-on relationship with a given bean are destroyed first,
+prior to the given bean itself being destroyed.
+Thus, depends-on can also control shutdown order.
+

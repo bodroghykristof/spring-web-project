@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- activates annotations for beans ALREADY IN THE APPLICATION CONTEXT -->
+    <context:annotation-config />
+
+    <!-- repository layer -->
+    <!-- actually these lines create BeanDefinition objects within the IOC container encapsulating -->
+    <!-- information about the bean's type, creation/destruction methods, scope, dependencies etc. -->
+    <bean id="userRepository" class="hu.vemsoft.web.repository.UserRepository" />
+
+    <!-- service layer -->
+    <bean id="userService" class="hu.vemsoft.web.service.UserService">
+        <property name="userRepository" ref="userRepository" />
+    </bean>
+
+</beans>
