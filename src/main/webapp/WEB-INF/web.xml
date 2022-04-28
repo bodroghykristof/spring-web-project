@@ -4,11 +4,17 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  
+
+  <!--  We define Spring MVC's Dispatcher Servlet as our frontal controller-->
+  <!--  We assign a name ('dispatcher') to the servlet -->
+
   <servlet>
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
   </servlet>
+
+  <!--  We map the servlet to the desired URL patter -->
+
   <servlet-mapping>
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
